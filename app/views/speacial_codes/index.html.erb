@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Speacial codes</h1>
+
+<div id="speacial_codes">
+  <% @speacial_codes.each do |speacial_code| %>
+    <%= render speacial_code %>
+    <p>
+      <%= link_to "Show this speacial code", speacial_code %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New speacial code", new_speacial_code_path %>

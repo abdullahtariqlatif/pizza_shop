@@ -1,0 +1,17 @@
+<%= form_with(model: speacial_code) do |form| %>
+  <% if speacial_code.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(speacial_code.errors.count, "error") %> prohibited this speacial_code from being saved:</h2>
+
+      <ul>
+        <% speacial_code.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
