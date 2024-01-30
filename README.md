@@ -74,9 +74,9 @@ expiry_date
 3- There would also be a form for promotional codes, These can be multiple, As there can be more than one promotional codes. The same would apply for discount codes
 5- At the Moment We would have a form structure like this:
 
-form -> Order
-  form -> Product-1
-    form -> p1_item-1
+form -> Order            # Form Level 1
+  form -> Product-1      # Form Level 2
+    form -> p1_item-1    # Form Level 3
     form -> p1_item-2
   form -> Product-2
     form -> p2_item-1
@@ -86,6 +86,19 @@ form -> Order
   form -> PromotionalCode/DiscontCode-2
 end
 
+order {
+  order attributes
+  + 
+  Array -> products
+  each Product {
+    product attributes
+    + 
+    Array -> Toppings
+    each Topping {
+      topping Attributes
+    }
+  }
+}
 
 The Order Record would already be created in  the db before the proper order is created.
 When the form would be submitted then:
