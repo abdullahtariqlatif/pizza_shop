@@ -67,4 +67,8 @@ class ProductsController < ApplicationController
     def product_params
       params.fetch(:product, {})
     end
+
+    def order_params
+      params.require(:product).permit(:unique_id, :name, toppings_attributes: [:id, :_destroy])
+    end
 end
