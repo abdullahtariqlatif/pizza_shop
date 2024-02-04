@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  unique_id: MyString
+  status: false
+
+two:
+  unique_id: MyString
+  status: false
